@@ -28,3 +28,15 @@ def terminate_instances():
     for instance in ec2.instances.all():
         instance.terminate()
         print(instance.id % " terminated")
+
+
+def start_instances():
+    for instance in ec2.instances.all():
+        instance.start()
+        print(instance.id % " terminated")
+
+
+def stop_instances():
+    for instance in ec2.instances.all():
+        instance.stop()
+        print(instance.id % " terminated")
