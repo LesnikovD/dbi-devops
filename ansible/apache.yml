@@ -1,0 +1,9 @@
+---
+- hosts: apache
+  sudo: yes
+  tasks:
+    - name: Push default virtual host configuration
+      copy: src=test.conf dest=/etc/apache2/sites-available/ mode=0640
+
+    - name: Activates our virtualhost
+      command: a2ensite test.conf
